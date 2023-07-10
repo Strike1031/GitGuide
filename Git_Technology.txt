@@ -1,0 +1,85 @@
+For git authentication issue with ssh,
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+And add this pub key to https://github.com/settings/keys
+==================================How to use Git=========================
+1. create a new repository on the command line
+echo "# gitRebaseChallenge" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:Strike1031/gitRebaseChallenge.git
+git push -u origin main
+
+2. push an existing repository from the command line
+git remote add origin git@github.com:Strike1031/gitRebaseChallenge.git
+git branch -M main
+git push -u origin main
+
+===================================Git Rebase Test=========================
+
+1.
+    Open github.com and open  repositories tab and click New button.
+
+2. Open Windows PowerShell and go the directory that you want to create
+echo "git rebase test" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:user_name/project_name.git
+git push -u origin main
+
+3. 
+Open Windows PowerShell and go to the directory that you cloned from the company.
+> git branch
+> git checkout <add-echo>
+> git rebase <master> <add-echo>      //or for your purpose, you can change ord <add-echo> <master>
+> git push origin
+
+
+
+4. git remote set-url origin git@github.com:Strike1031/gitRebaseChallenge.git
+
+
+------------------------------Make new github repo with all commits from another repository---------------------------------------------------
+
+
+1. Create a new repository on GitHub by clicking on the "+" sign in the top-right corner of the GitHub website and selecting "New repository." Give it a name and configure any other desired settings. 
+ 
+2. Clone the new repository to your local machine using the following command in your terminal or command prompt:
+         git clone <new_repository_url>
+3. Change into the newly cloned repository's directory:
+         cd <new_repository_directory>
+4. Add the original repository as a remote to your new repository. Replace  <original_repository_url>  with the URL of the repository you want to copy commits from:
+         git remote add upstream <original_repository_url>
+5. Fetch all the commits from the original repository:
+         git fetch upstream
+6. Merge all the fetched commits into your new repository's branch (e.g.,  main  or  master ):
+         git merge upstream/<branch_name>
+Note: Replace  <branch_name>  with the name of the branch you want to merge from the original repository. If you want to merge the default branch, replace  <branch_name>  with the name of the default branch (e.g.,  main  or  master ). 
+ 
+7. Push the merged commits to your new repository on GitHub:
+        git push origin <branch_name>
+Note: Replace  <branch_name>  with the name of the branch you want to push the merged commits to.
+
+
+
+git checkout --track origin/add-echo
+git push origin add-echo
+git checkout --track origin/add-reverse
+git push origin add-reverse
+
+git rebase add-echo master
+git push origin --force
+
+git rebase add-reverse master
+<<<<<<Fix issues>>>>>>>>
+git status
+git stash
+Open the conflicting files in a text editor and remove sections marked with conflict markers ( <<<<<<< ,  ======= , and  >>>>>>> ). 
+git add <resolved-files>
+git stash apply
+git checkout add-reverse
+
